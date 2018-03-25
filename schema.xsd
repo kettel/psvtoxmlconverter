@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="people">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="personType" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="personType">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="lastname" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="phone" type="phoneType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="address" type="addressType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="family" type="familyType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addressType">
+        <xs:sequence>
+            <!-- If address is given, at least one is expected but multi might be possible (not stated but assumed) -->
+            <xs:element name="street" type="xs:string" minOccurs="0" />
+            <xs:element name="city" type="xs:string" minOccurs="0" />
+            <xs:element name="zipnumber" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="phoneType">
+        <xs:sequence>
+            <!-- If phone is given, at least one or the other is expected, hence minOccurs at 0 -->
+            <xs:element name="mobile" type="xs:string" minOccurs="0" />
+            <xs:element name="landline" type="xs:string" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="familyType">
+        <xs:sequence>
+            <!-- Same "or"-reasoning as with phone -->
+            <xs:element name="name" type="xs:string" minOccurs="0" />
+            <xs:element name="born" type="xs:integer" minOccurs="0" />
+            <xs:element name="address" type="addressType" minOccurs="0" />
+            <xs:element name="phone" type="phoneType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,18 @@
+{
+  "name": "psvtoxmlconverter",
+  "version": "1.0.0",
+  "description": "Pipe separated Persons to XML Converter, with built in XSD-validator",
+  "main": "index.js",
+  "scripts": {
+    "convert": "node index.js",
+    "validate": "node validate.js",
+    "convertAndValidate": "node index.js && node validate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wiktor Kettel",
+  "license": "ISC",
+  "dependencies": {
+    "libxml-xsd": "^0.5.2",
+    "libxmljs": "^0.18.7"
+  }
+}
