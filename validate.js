@@ -10,7 +10,7 @@ let schema = './schema.xsd';
 
 fs.readFile(xmlToValidate, 'utf8', function (err, data) {
     if (err) throw err;
-    // console.log(data);
+    
     xsd.parseFile(schema, function (err2, schema) {
         if (err2) throw err2;
 
