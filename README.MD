@@ -6,13 +6,12 @@ A cross-platform nodejs script that converts a pipe-separated and structured `da
 - node-gyp
 
 ## Run:
-`$ git clone <adress to repo>`
-
-`$ cd psvtoxmlconverter`
-
-`$ npm i`
-
-`$ npm run convert`
+```
+$ git clone https://github.com/kettel/psvtoxmlconverter.git
+$ cd psvtoxmlconverter
+$ npm i
+$ npm run convert
+```
 
 You should now have a well-formed `out.xml` in the `psvtoxmlconverter` root-folder.
 
